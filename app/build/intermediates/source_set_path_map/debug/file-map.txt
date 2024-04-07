@@ -1,21 +1,37 @@
 com.example.imageclassification.app-recyclerview-1.1.0-0 C:\Users\Admin\.gradle\caches\transforms-3\0e7adfc19a5ffb249e96f58207cf2c78\transformed\recyclerview-1.1.0\res
-com.example.imageclassification.app-jetified-appcompat-resources-1.2.0-1 C:\Users\Admin\.gradle\caches\transforms-3\13b6912d65fa5af99ebae450f1f090dd\transformed\jetified-appcompat-resources-1.2.0\res
-com.example.imageclassification.app-jetified-play-services-base-17.4.0-2 C:\Users\Admin\.gradle\caches\transforms-3\18e580ef7f339521a16e60b38d11403a\transformed\jetified-play-services-base-17.4.0\res
-com.example.imageclassification.app-cardview-1.0.0-3 C:\Users\Admin\.gradle\caches\transforms-3\29261945a1906f960dc19a6b044b2c7c\transformed\cardview-1.0.0\res
-com.example.imageclassification.app-coordinatorlayout-1.1.0-4 C:\Users\Admin\.gradle\caches\transforms-3\7545461db118c767a94e90fb3ab5b862\transformed\coordinatorlayout-1.1.0\res
-com.example.imageclassification.app-material-1.2.1-5 C:\Users\Admin\.gradle\caches\transforms-3\8faf4ea58de8cd64ba0726f1cb064117\transformed\material-1.2.1\res
-com.example.imageclassification.app-appcompat-1.2.0-6 C:\Users\Admin\.gradle\caches\transforms-3\916c74cf323245c9a8ea2346158222d2\transformed\appcompat-1.2.0\res
-com.example.imageclassification.app-jetified-play-services-basement-17.4.0-7 C:\Users\Admin\.gradle\caches\transforms-3\b7c4797b4f20bf8bbf15016e34a821d2\transformed\jetified-play-services-basement-17.4.0\res
-com.example.imageclassification.app-transition-1.2.0-8 C:\Users\Admin\.gradle\caches\transforms-3\b845486ff86956ab434ca0caefac370c\transformed\transition-1.2.0\res
-com.example.imageclassification.app-constraintlayout-2.0.4-9 C:\Users\Admin\.gradle\caches\transforms-3\c6b6ab9f942f9d7edf7eb6890d347288\transformed\constraintlayout-2.0.4\res
-com.example.imageclassification.app-core-1.3.1-10 C:\Users\Admin\.gradle\caches\transforms-3\ddc34b3fd9cdaf8c562e8fd91c488a31\transformed\core-1.3.1\res
-com.example.imageclassification.app-jetified-viewpager2-1.0.0-11 C:\Users\Admin\.gradle\caches\transforms-3\f4e2c4beec8db3475ccc0bb5e6a2fd9c\transformed\jetified-viewpager2-1.0.0\res
-com.example.imageclassification.app-google-services-12 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\google-services\debug
-com.example.imageclassification.app-pngs-13 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\pngs\debug
-com.example.imageclassification.app-resValues-14 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\resValues\debug
-com.example.imageclassification.app-rs-15 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\rs\debug
-com.example.imageclassification.app-mergeDebugResources-16 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.example.imageclassification.app-mergeDebugResources-17 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.example.imageclassification.app-merged_res-18 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\merged_res\debug
-com.example.imageclassification.app-debug-19 D:\Machine Learning\Android based apps\PoseEstimationJava\app\src\debug\res
-com.example.imageclassification.app-main-20 D:\Machine Learning\Android based apps\PoseEstimationJava\app\src\main\res
+com.example.imageclassification.app-jetified-lifecycle-process-2.4.1-1 C:\Users\Admin\.gradle\caches\transforms-3\1a862b9b8289abf2c818ab9cb86166c9\transformed\jetified-lifecycle-process-2.4.1\res
+com.example.imageclassification.app-work-runtime-ktx-2.7.0-2 C:\Users\Admin\.gradle\caches\transforms-3\1f4c6d92e2e97f5ea4cea7e4322796a6\transformed\work-runtime-ktx-2.7.0\res
+com.example.imageclassification.app-jetified-startup-runtime-1.1.1-3 C:\Users\Admin\.gradle\caches\transforms-3\2363322e37b27c28424d08115a257735\transformed\jetified-startup-runtime-1.1.1\res
+com.example.imageclassification.app-cardview-1.0.0-4 C:\Users\Admin\.gradle\caches\transforms-3\29261945a1906f960dc19a6b044b2c7c\transformed\cardview-1.0.0\res
+com.example.imageclassification.app-jetified-play-services-basement-18.3.0-5 C:\Users\Admin\.gradle\caches\transforms-3\2b55b4098e6117830846d5ceb589310d\transformed\jetified-play-services-basement-18.3.0\res
+com.example.imageclassification.app-jetified-emoji2-views-helper-1.2.0-6 C:\Users\Admin\.gradle\caches\transforms-3\3c0803b1a492bc320687ff4aafff7d4f\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.example.imageclassification.app-jetified-core-ktx-1.9.0-7 C:\Users\Admin\.gradle\caches\transforms-3\5c143a6f2c4c6f2a201fcde5c0a081b1\transformed\jetified-core-ktx-1.9.0\res
+com.example.imageclassification.app-jetified-emoji2-1.2.0-8 C:\Users\Admin\.gradle\caches\transforms-3\5eefbb99aaea7cb46d86f3e4499045c6\transformed\jetified-emoji2-1.2.0\res
+com.example.imageclassification.app-jetified-play-services-base-18.3.0-9 C:\Users\Admin\.gradle\caches\transforms-3\67371cf571745eb46a91a1c8537d487e\transformed\jetified-play-services-base-18.3.0\res
+com.example.imageclassification.app-lifecycle-viewmodel-2.5.1-10 C:\Users\Admin\.gradle\caches\transforms-3\6be02d7d2bbb35951d34bc4b39d5bf75\transformed\lifecycle-viewmodel-2.5.1\res
+com.example.imageclassification.app-coordinatorlayout-1.1.0-11 C:\Users\Admin\.gradle\caches\transforms-3\7545461db118c767a94e90fb3ab5b862\transformed\coordinatorlayout-1.1.0\res
+com.example.imageclassification.app-material-1.2.1-12 C:\Users\Admin\.gradle\caches\transforms-3\8faf4ea58de8cd64ba0726f1cb064117\transformed\material-1.2.1\res
+com.example.imageclassification.app-work-runtime-2.7.0-13 C:\Users\Admin\.gradle\caches\transforms-3\a2e1727be6468ed90cf36854310304d1\transformed\work-runtime-2.7.0\res
+com.example.imageclassification.app-jetified-work-multiprocess-2.7.0-14 C:\Users\Admin\.gradle\caches\transforms-3\a81a9bda3db33ab6841c59049bbbab92\transformed\jetified-work-multiprocess-2.7.0\res
+com.example.imageclassification.app-lifecycle-livedata-core-2.5.1-15 C:\Users\Admin\.gradle\caches\transforms-3\a93c9a5165ccfb09e1142c3726e45956\transformed\lifecycle-livedata-core-2.5.1\res
+com.example.imageclassification.app-jetified-activity-1.6.0-16 C:\Users\Admin\.gradle\caches\transforms-3\b5bb2b3118e819dcacce42b261c49190\transformed\jetified-activity-1.6.0\res
+com.example.imageclassification.app-transition-1.2.0-17 C:\Users\Admin\.gradle\caches\transforms-3\b845486ff86956ab434ca0caefac370c\transformed\transition-1.2.0\res
+com.example.imageclassification.app-lifecycle-runtime-2.5.1-18 C:\Users\Admin\.gradle\caches\transforms-3\badee3374c019c22f206b016b8df96b1\transformed\lifecycle-runtime-2.5.1\res
+com.example.imageclassification.app-jetified-annotation-experimental-1.3.0-19 C:\Users\Admin\.gradle\caches\transforms-3\bd54dcf93cd8ec51e3dfe557ba055ef5\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.imageclassification.app-constraintlayout-2.0.4-20 C:\Users\Admin\.gradle\caches\transforms-3\c6b6ab9f942f9d7edf7eb6890d347288\transformed\constraintlayout-2.0.4\res
+com.example.imageclassification.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-21 C:\Users\Admin\.gradle\caches\transforms-3\de744d4dbdf0189e5d21327e6389a4c8\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.example.imageclassification.app-jetified-savedstate-1.2.0-22 C:\Users\Admin\.gradle\caches\transforms-3\edf9952d3daade3a4801c32579c3f510\transformed\jetified-savedstate-1.2.0\res
+com.example.imageclassification.app-jetified-viewpager2-1.0.0-23 C:\Users\Admin\.gradle\caches\transforms-3\f4e2c4beec8db3475ccc0bb5e6a2fd9c\transformed\jetified-viewpager2-1.0.0\res
+com.example.imageclassification.app-core-1.9.0-24 C:\Users\Admin\.gradle\caches\transforms-3\f5ed42a2195d7465c348744e7f5bf8a9\transformed\core-1.9.0\res
+com.example.imageclassification.app-jetified-appcompat-resources-1.6.1-25 C:\Users\Admin\.gradle\caches\transforms-3\f77541f00a3c6ebd3a923edc863d48b0\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.imageclassification.app-appcompat-1.6.1-26 C:\Users\Admin\.gradle\caches\transforms-3\fc69ff83b197bf2149259a12fe73df8e\transformed\appcompat-1.6.1\res
+com.example.imageclassification.app-fragment-1.3.6-27 C:\Users\Admin\.gradle\caches\transforms-3\fdcdd865a733ae1cd19a940e0c3ab44d\transformed\fragment-1.3.6\res
+com.example.imageclassification.app-google-services-28 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\google-services\debug
+com.example.imageclassification.app-pngs-29 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\pngs\debug
+com.example.imageclassification.app-resValues-30 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\resValues\debug
+com.example.imageclassification.app-rs-31 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\generated\res\rs\debug
+com.example.imageclassification.app-mergeDebugResources-32 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.imageclassification.app-mergeDebugResources-33 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.imageclassification.app-merged_res-34 D:\Machine Learning\Android based apps\PoseEstimationJava\app\build\intermediates\merged_res\debug
+com.example.imageclassification.app-debug-35 D:\Machine Learning\Android based apps\PoseEstimationJava\app\src\debug\res
+com.example.imageclassification.app-main-36 D:\Machine Learning\Android based apps\PoseEstimationJava\app\src\main\res

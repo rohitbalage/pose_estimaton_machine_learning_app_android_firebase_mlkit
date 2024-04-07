@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int PERMISSION_CODE = 321;
     ImageView innerImage;
     private Uri image_uri;
+
+    PoseDetector poseDetector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +94,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Accurate pose detector on static images, when depending on the pose-detection-accurate sdk
-
+        // Accurate pose detector on static images, when depending on the pose-detection-accurate sdk
+        AccuratePoseDetectorOptions options =
+                new AccuratePoseDetectorOptions.Builder()
+                        .setDetectorMode(AccuratePoseDetectorOptions.SINGLE_IMAGE_MODE)
+                        .build();
+         poseDetector = PoseDetection.getClient(options);
 
 
 
@@ -132,6 +139,105 @@ public class MainActivity extends AppCompatActivity {
         Bitmap inputImage = uriToBitmap(image_uri);
         Bitmap rotated = rotateBitmap(inputImage);
         innerImage.setImageBitmap(rotated);
+
+        // mutable copy of bitmap
+
+    Bitmap mutable = rotated.copy(Bitmap.Config.ARGB_8888,true);
+
+    Canvas canvas = new Canvas(mutable);
+    Paint paint = new Paint();
+    paint.setColor(Color.RED);
+    paint.setStrokeWidth(3);
+
+        Paint p = new Paint();
+        p.setColor(Color.YELLOW);
+        p.setStrokeWidth(3);
+
+        InputImage image = InputImage.fromBitmap(rotated, 0);
+
+        Task<Pose> result =
+                poseDetector.process(image)
+                        .addOnSuccessListener(
+                                new OnSuccessListener<Pose>() {
+                                    @Override
+                                    public void onSuccess(Pose pose) {
+                                        // Task completed successfully
+                                        // ...
+
+                                        // Get all PoseLandmarks. If no person was detected, the list will be empty
+                                        List<PoseLandmark> allPoseLandmarks = pose.getAllPoseLandmarks();
+
+                                        for(PoseLandmark pl: allPoseLandmarks)
+                                        {
+                                      pl.getPosition();
+                                      canvas.drawPoint(pl.getPosition().x, pl.getPosition().y,paint);
+                                        }
+// Or get specific PoseLandmarks individually. These will all be null if no person
+// was detected
+
+    PoseLandmark leftShoulder = pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER);
+    PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
+    PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
+    PoseLandmark rightElbow = pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW);
+    PoseLandmark leftWrist = pose.getPoseLandmark(PoseLandmark.LEFT_WRIST);
+    PoseLandmark rightWrist = pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST);
+    PoseLandmark leftHip = pose.getPoseLandmark(PoseLandmark.LEFT_HIP);
+    PoseLandmark rightHip = pose.getPoseLandmark(PoseLandmark.RIGHT_HIP);
+    PoseLandmark leftKnee = pose.getPoseLandmark(PoseLandmark.LEFT_KNEE);
+    PoseLandmark rightKnee = pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE);
+    PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
+    PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
+
+    PoseLandmark leftPinky = pose.getPoseLandmark(PoseLandmark.LEFT_PINKY);
+    PoseLandmark rightPinky = pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY);
+    PoseLandmark leftIndex = pose.getPoseLandmark(PoseLandmark.LEFT_INDEX);
+    PoseLandmark rightIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX);
+    PoseLandmark leftThumb = pose.getPoseLandmark(PoseLandmark.LEFT_THUMB);
+    PoseLandmark rightThumb = pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB);
+    PoseLandmark leftHeel = pose.getPoseLandmark(PoseLandmark.LEFT_HEEL);
+    PoseLandmark rightHeel = pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL);
+    PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
+    PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
+
+    drawLine(canvas, leftShoulder, rightShoulder, p);
+    drawLine(canvas, leftHip, rightHip, p);
+
+    // Left body
+    drawLine(canvas, leftShoulder, leftElbow, p);
+    drawLine(canvas, leftElbow, leftWrist, p);
+    drawLine(canvas, leftShoulder, leftHip, p);
+    drawLine(canvas, leftHip, leftKnee, p);
+    drawLine(canvas, leftKnee, leftAnkle, p);
+    drawLine(canvas, leftWrist, leftThumb, p);
+    drawLine(canvas, leftWrist, leftPinky, p);
+    drawLine(canvas, leftWrist, leftIndex, p);
+    drawLine(canvas, leftIndex, leftPinky, p);
+    drawLine(canvas, leftAnkle, leftHeel, p);
+    drawLine(canvas, leftHeel, leftFootIndex, p);
+
+    // Right body
+    drawLine(canvas, rightShoulder, rightElbow, p);
+    drawLine(canvas, rightElbow, rightWrist, p);
+    drawLine(canvas, rightShoulder, rightHip, p);
+    drawLine(canvas, rightHip, rightKnee, p);
+    drawLine(canvas, rightKnee, rightAnkle, p);
+    drawLine(canvas, rightWrist, rightThumb, p);
+    drawLine(canvas, rightWrist, rightPinky, p);
+    drawLine(canvas, rightWrist, rightIndex, p);
+    drawLine(canvas, rightIndex, rightPinky, p);
+    drawLine(canvas, rightAnkle, rightHeel, p);
+    drawLine(canvas, rightHeel, rightFootIndex, p);
+                                        innerImage.setImageBitmap(mutable);
+                                    }
+                                })
+                        .addOnFailureListener(
+                                new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Task failed with an exception
+                                        // ...
+                                    }
+                                });
 
     }
 
@@ -180,58 +286,6 @@ public class MainActivity extends AppCompatActivity {
                     start.x, start.y, end.x, end.y, paint);
     }
 
-//    PoseLandmark leftShoulder = pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER);
-//    PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
-//    PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
-//    PoseLandmark rightElbow = pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW);
-//    PoseLandmark leftWrist = pose.getPoseLandmark(PoseLandmark.LEFT_WRIST);
-//    PoseLandmark rightWrist = pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST);
-//    PoseLandmark leftHip = pose.getPoseLandmark(PoseLandmark.LEFT_HIP);
-//    PoseLandmark rightHip = pose.getPoseLandmark(PoseLandmark.RIGHT_HIP);
-//    PoseLandmark leftKnee = pose.getPoseLandmark(PoseLandmark.LEFT_KNEE);
-//    PoseLandmark rightKnee = pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE);
-//    PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
-//    PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
-//
-//    PoseLandmark leftPinky = pose.getPoseLandmark(PoseLandmark.LEFT_PINKY);
-//    PoseLandmark rightPinky = pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY);
-//    PoseLandmark leftIndex = pose.getPoseLandmark(PoseLandmark.LEFT_INDEX);
-//    PoseLandmark rightIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX);
-//    PoseLandmark leftThumb = pose.getPoseLandmark(PoseLandmark.LEFT_THUMB);
-//    PoseLandmark rightThumb = pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB);
-//    PoseLandmark leftHeel = pose.getPoseLandmark(PoseLandmark.LEFT_HEEL);
-//    PoseLandmark rightHeel = pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL);
-//    PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
-//    PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
-//
-//    drawLine(canvas, leftShoulder, rightShoulder, p);
-//    drawLine(canvas, leftHip, rightHip, p);
-//
-//    // Left body
-//    drawLine(canvas, leftShoulder, leftElbow, p);
-//    drawLine(canvas, leftElbow, leftWrist, p);
-//    drawLine(canvas, leftShoulder, leftHip, p);
-//    drawLine(canvas, leftHip, leftKnee, p);
-//    drawLine(canvas, leftKnee, leftAnkle, p);
-//    drawLine(canvas, leftWrist, leftThumb, p);
-//    drawLine(canvas, leftWrist, leftPinky, p);
-//    drawLine(canvas, leftWrist, leftIndex, p);
-//    drawLine(canvas, leftIndex, leftPinky, p);
-//    drawLine(canvas, leftAnkle, leftHeel, p);
-//    drawLine(canvas, leftHeel, leftFootIndex, p);
-//
-//    // Right body
-//    drawLine(canvas, rightShoulder, rightElbow, p);
-//    drawLine(canvas, rightElbow, rightWrist, p);
-//    drawLine(canvas, rightShoulder, rightHip, p);
-//    drawLine(canvas, rightHip, rightKnee, p);
-//    drawLine(canvas, rightKnee, rightAnkle, p);
-//    drawLine(canvas, rightWrist, rightThumb, p);
-//    drawLine(canvas, rightWrist, rightPinky, p);
-//    drawLine(canvas, rightWrist, rightIndex, p);
-//    drawLine(canvas, rightIndex, rightPinky, p);
-//    drawLine(canvas, rightAnkle, rightHeel, p);
-//    drawLine(canvas, rightHeel, rightFootIndex, p);
 
 }
 
